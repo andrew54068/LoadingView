@@ -13,23 +13,23 @@ class TargetForTestingFileOwner: UIViewController {
     let loadingView = LoadingView()
     
     @IBAction func unlikeAction(_ sender: Any) {
-        loadingView.setupLoadingView(frame: view.frame, title: "已取消蒐藏", type: .unlike, displayTimeInterval: 1.5)
+        loadingView.setupLoadingView(frame: view.frame, title: "已取消蒐藏", type: .unlike, displayTimeInterval: 15)
         loadingView.show()
     }
     @IBAction func cautionAction(_ sender: Any) {
-        loadingView.setupLoadingView(frame: view.frame, title: "密碼需至少八碼\n包含英數字", type: .caution, displayTimeInterval: 1.5)
+        loadingView.setupLoadingView(frame: view.frame, title: "密碼需至少八碼\n包含英數字", type: .caution, displayTimeInterval: 15)
         loadingView.show()
     }
     @IBAction func likeAction(_ sender: Any) {
-        loadingView.setupLoadingView(frame: view.frame, title: "已蒐藏", type: .like, displayTimeInterval: 1.5)
+        loadingView.setupLoadingView(frame: view.frame, title: "已蒐藏", type: .like, displayTimeInterval: 15)
         loadingView.show()
     }
     @IBAction func successAction(_ sender: Any) {
-        loadingView.setupLoadingView(frame: view.frame, title: "更新成功", type: .success, displayTimeInterval: 1.5)
+        loadingView.setupLoadingView(frame: view.frame, title: "更新成功", type: .success, displayTimeInterval: 10)
         loadingView.show()
     }
     @IBAction func sendAction(_ sender: Any) {
-        loadingView.setupLoadingView(frame: view.frame, title: "註冊成功", type: .send, displayTimeInterval: 1.5)
+        loadingView.setupLoadingView(frame: view.frame, title: "註冊成功", type: .send, displayTimeInterval: 10)
         loadingView.show()
     }
 
@@ -39,8 +39,8 @@ class TargetForTestingFileOwner: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadingView.setupLoadingView(frame: view.frame, title: "Testing", type: .caution, displayTimeInterval: 3)
         view.addSubview(loadingView)
     }

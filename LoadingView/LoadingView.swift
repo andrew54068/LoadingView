@@ -72,7 +72,7 @@ class LoadingView: UIView {
     }
     
     func show() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         self.fadeIn()
     }
     
@@ -91,6 +91,7 @@ class LoadingView: UIView {
             timer.invalidate()
         }
         else {
+            print(seconds)
             seconds -= 1
         }
     }
@@ -107,7 +108,7 @@ class LoadingView: UIView {
         }, completion: completion)
     }
     
-    func fadeOut(duration: TimeInterval = 0.5,
+    func fadeOut(duration: TimeInterval = 0.3,
                  delay: TimeInterval = 0.0,
                  completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in }) {
         UIView.animate(withDuration: duration,
