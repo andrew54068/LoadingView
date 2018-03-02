@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoadingView/LoadingView.swift"
-            timestampString = "541671854.3282011"
+            timestampString = "541681394.009446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "awakeFromNib()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "show()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LoadingView/Target_VC.swift"
-            timestampString = "541671854.32857"
+            filePath = "LoadingView/LoadingView.swift"
+            timestampString = "541681394.009867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "addLikeLoadingView()"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "updateTimer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoadingView/TargetForTestingFileOwner.swift"
+            timestampString = "541681394.009958"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "unlikeAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

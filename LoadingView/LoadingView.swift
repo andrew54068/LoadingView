@@ -44,45 +44,54 @@ class LoadingView: UIView {
     }
     
     
-    init(displayTimeInterval: TimeInterval?) {
+    init() {
         super.init(frame: CGRect.zero)
-//        self.setNeedsLayout()
-//        self.layoutIfNeeded()
-        self.seconds = displayTimeInterval ?? self.seconds
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
     }
     
-    func loadViewFromNib(title: String, type: LoadingType) -> LoadingView {
-        let loadingView = UINib(nibName: "LoadingView", bundle: nil).instantiate(withOwner: self, options: nil).first as! LoadingView
+    func setup() {
+        Bundle.main.loadNibNamed("LoadingView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    func setupLoadingView(frame: CGRect, title: String, type: LoadingType, displayTimeInterval: TimeInterval?){
+        
         let attributes = [NSAttributedStringKey.font: UIFont(name: "PingFangTC-Light", size: 16)! ]
         let attributedString = NSMutableAttributedString(string: title, attributes: attributes)
-        loadingView.label.attributedText = attributedString
-        loadingView.type = type
-        loadingView.alpha = 0
-        loadingView.fadeIn()
-        return loadingView
+        self.label.attributedText = attributedString
+        self.contentView.frame = frame
+        self.alpha = 0
+        self.type = type
+        self.seconds = displayTimeInterval ?? self.seconds
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func show() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-//        fadeIn()
+        self.fadeIn()
     }
+    
+    func hide() {
+        self.fadeOut()
+    }
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+//    }
     
     @objc func updateTimer() {
         if seconds < 1 {
             fadeOut()
-//            UIView.animate(withDuration: 0.5, animations: {
-//                self.alpha = 0
-////                self.imageView.backgroundColor = UIColor.clear
-//            })
-            //Send alert to indicate time's up.
-        } else {
+            timer.invalidate()
+        }
+        else {
             seconds -= 1
-            print("counting here")
         }
     }
     
@@ -106,9 +115,7 @@ class LoadingView: UIView {
                        options: UIViewAnimationOptions.curveEaseIn,
                        animations: {
                         self.alpha = 0.0
-        }, completion: { _ in
-            self.removeFromSuperview()
-        })
+        }, completion: completion)
     }
     /*
     // Only override draw() if you perform custom drawing.

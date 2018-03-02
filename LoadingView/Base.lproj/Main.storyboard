@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7En-D9-d50">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e8u-5g-doa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,6 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="540" y="32"/>
         </scene>
         <!--TargetVC-->
         <scene sceneID="hNE-sH-bDD">
@@ -111,7 +112,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2j-ki-VB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1423" y="34"/>
+            <point key="canvasLocation" x="1257" y="32"/>
+        </scene>
+        <!--Target For Testing File Owner-->
+        <scene sceneID="2Yz-CY-wof">
+            <objects>
+                <viewController id="e8u-5g-doa" customClass="TargetForTestingFileOwner" customModule="LoadingView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPe-2g-7Zs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxf-JT-mvq">
+                                <rect key="frame" x="159.5" y="607" width="56" height="30"/>
+                                <state key="normal" title="unlike"/>
+                                <connections>
+                                    <action selector="unlikeAction:" destination="e8u-5g-doa" eventType="touchUpInside" id="ivc-66-6gl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Zy-OkN">
+                                <rect key="frame" x="27.5" y="607" width="56" height="30"/>
+                                <state key="normal" title="caution"/>
+                                <connections>
+                                    <action selector="cautionAction:" destination="e8u-5g-doa" eventType="touchUpInside" id="Sfm-Qn-giP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpk-tP-slR">
+                                <rect key="frame" x="225.5" y="607" width="56" height="30"/>
+                                <state key="normal" title="success"/>
+                                <connections>
+                                    <action selector="successAction:" destination="e8u-5g-doa" eventType="touchUpInside" id="XF1-mX-u7E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZb-ZD-6PO">
+                                <rect key="frame" x="291.5" y="607" width="56" height="30"/>
+                                <state key="normal" title="send"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="e8u-5g-doa" eventType="touchUpInside" id="Y2b-8N-XP0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPz-QA-hlf">
+                                <rect key="frame" x="93.5" y="607" width="56" height="30"/>
+                                <state key="normal" title="like"/>
+                                <connections>
+                                    <action selector="likeAction:" destination="e8u-5g-doa" eventType="touchUpInside" id="BLG-eK-bYo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oPz-QA-hlf" firstAttribute="leading" secondItem="w14-Zy-OkN" secondAttribute="trailing" constant="10" id="5nK-KH-GMB"/>
+                            <constraint firstItem="Kpk-tP-slR" firstAttribute="leading" secondItem="oxf-JT-mvq" secondAttribute="trailing" constant="10" id="6Br-Vg-KyB"/>
+                            <constraint firstItem="oxf-JT-mvq" firstAttribute="width" secondItem="w14-Zy-OkN" secondAttribute="width" id="8LP-OD-QcR"/>
+                            <constraint firstItem="oxf-JT-mvq" firstAttribute="leading" secondItem="oPz-QA-hlf" secondAttribute="trailing" constant="10" id="A7z-I2-fOs"/>
+                            <constraint firstItem="iZb-ZD-6PO" firstAttribute="top" secondItem="Kpk-tP-slR" secondAttribute="top" id="AVa-Al-1pC"/>
+                            <constraint firstItem="oxf-JT-mvq" firstAttribute="centerX" secondItem="dJi-SW-Y8b" secondAttribute="centerX" id="JLc-Qg-XVw"/>
+                            <constraint firstItem="dJi-SW-Y8b" firstAttribute="bottom" secondItem="oxf-JT-mvq" secondAttribute="bottom" constant="30" id="LhN-T0-APi"/>
+                            <constraint firstItem="Kpk-tP-slR" firstAttribute="top" secondItem="oxf-JT-mvq" secondAttribute="top" id="SLH-NA-kx6"/>
+                            <constraint firstItem="iZb-ZD-6PO" firstAttribute="leading" secondItem="Kpk-tP-slR" secondAttribute="trailing" constant="10" id="aYx-uJ-TEl"/>
+                            <constraint firstItem="oPz-QA-hlf" firstAttribute="top" secondItem="oxf-JT-mvq" secondAttribute="top" id="bAY-OF-q9V"/>
+                            <constraint firstItem="iZb-ZD-6PO" firstAttribute="width" secondItem="oPz-QA-hlf" secondAttribute="width" id="bIE-0K-eQq"/>
+                            <constraint firstItem="oPz-QA-hlf" firstAttribute="width" secondItem="w14-Zy-OkN" secondAttribute="width" id="hx0-nY-Jmw"/>
+                            <constraint firstItem="w14-Zy-OkN" firstAttribute="top" secondItem="oPz-QA-hlf" secondAttribute="top" id="sU7-wa-cGC"/>
+                            <constraint firstItem="Kpk-tP-slR" firstAttribute="width" secondItem="oPz-QA-hlf" secondAttribute="width" id="vzC-Po-oni"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dJi-SW-Y8b"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coo-yt-2sF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="32"/>
         </scene>
     </scenes>
 </document>
